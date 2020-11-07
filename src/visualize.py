@@ -1,4 +1,0 @@
-"""
-Jon Zhang
-visualize.py
-"""
