@@ -1,4 +1,0 @@
-"""
-Jon Zhang
-stub.file
-"""

@@ -1,0 +1,8 @@
+{
+    "data_dir": "/data/temp/counters_ull_time_data",
+    "MEASUREMENT_TIME": "specified date",
+    "TIME": "specified time",
+    "ID_INPUT": "Integer",
+    "VALUE": "Integer",
+    "PRIVATE_DATA": "Integer"
+}
