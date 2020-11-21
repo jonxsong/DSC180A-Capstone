@@ -9,7 +9,7 @@ import os
 sys.path.insert(0, 'src')
 from src.data_analysis import *
 
-### run database
+### run go.bat
     # some function to do this
 
 ### run data analysis methods
@@ -41,6 +41,8 @@ def main():
     print("The value is 44.5%.")
     print(" ")
     print(" ")
+
+    
 
 if __name__ == "__main__":
     main()
