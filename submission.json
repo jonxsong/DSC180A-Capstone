@@ -1,7 +1,0 @@
-{
-    "config": ["config/battery-db-data-params.json", "config/counters-ull-time-data-params.json"],
-    "build": "go.bat",
-    "library": ["intel_loaded_drivers_input/x64/Release/BatteryUse_il.lib"],
-    "notebook": ["notebooks/CHECKPOINT_TWO.ipynb"],
-    "targets": ["intel_loaded_drivers_input/battery.c", "intel_loaded_drivers_input/battery.h"]
-  }
