@@ -20,6 +20,13 @@ def main(targets):
     """
     battery_config = json.load(open('config/battery-db-data-params.json'))
     time_config = json.load(open('config/counters-ull-time-data-params.json'))
+    sqlserver_dc_config = [
+        {
+         'Trusted_Connection': 'yes', 'driver': '{SQL Server}',
+         'server': 'your_sql_server', 'database': 'test/testdata.db', 'user': 'your_db_username',
+         'password': 'your_db_password', 'autocommit': True
+        }
+    ]
 
     if 'battery' in targets:
 
