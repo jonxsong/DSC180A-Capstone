@@ -2,7 +2,7 @@
 
 Please refer over to notebooks/FINAL_NOTEBOOK.ipynb for the Final Report + Code submission.
 
-The notebook should contain all necessary explorations of data.
+The FINAL_NOTEBOOK.pdf in the root directory should contain all necessary explorations of data along with the report as well.
 
 For graphs produced from running our main script, run.py, please refer over to "../data/out"
 
