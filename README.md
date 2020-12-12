@@ -6,7 +6,8 @@ The notebook should contain all necessary explorations of data.
 
 For graphs produced from running our main script, run.py, please refer over to "../data/out"
 
-To access our work with the Analyzer Task Library (ATL), please refer over to "../ATL/Class1.cs"
+To access our work with the Analyzer Task Library (ATL) and our data collected into
+the Input Libraries (IL), please refer over to "../ATL-and-IL.zip"
 
 ### Responsibilities:
 
