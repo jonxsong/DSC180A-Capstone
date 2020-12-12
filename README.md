@@ -1,8 +1,9 @@
 # DSC180A-Capstone
+
 Please refer over to notebooks/FINAL_NOTEBOOK.ipynb for the Final Report + Code submission.
 The notebook should contain all necessary explorations of data.
-
-For graphs produced from running our main script, run.py, please refer over to "data/out"
+For graphs produced from running our main script, run.py, please refer over to "../data/out"
+To access our work with the Analyzer Task Library (ATL), please refer over to "../ATL/Class1.cs"
 
 ### Responsibilities:
 
