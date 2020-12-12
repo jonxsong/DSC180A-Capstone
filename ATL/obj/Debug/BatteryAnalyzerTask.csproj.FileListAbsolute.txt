@@ -1,0 +1,16 @@
+C:\Users\kesha\Desktop\_atlsdk1\_atlsdk\BatteryAnalyzerTask\bin\Debug\BatteryAnalyzerTask.dll
+C:\Users\kesha\Desktop\_atlsdk1\_atlsdk\BatteryAnalyzerTask\bin\Debug\BatteryAnalyzerTask.pdb
+C:\Users\kesha\Desktop\_atlsdk1\_atlsdk\BatteryAnalyzerTask\bin\Debug\AnalyzerTask.dll
+C:\Users\kesha\Desktop\_atlsdk1\_atlsdk\BatteryAnalyzerTask\bin\Debug\ATLHelper.dll
+C:\Users\kesha\Desktop\_atlsdk1\_atlsdk\BatteryAnalyzerTask\bin\Debug\Common.dll
+C:\Users\kesha\Desktop\_atlsdk1\_atlsdk\BatteryAnalyzerTask\bin\Debug\Config.dll
+C:\Users\kesha\Desktop\_atlsdk1\_atlsdk\BatteryAnalyzerTask\bin\Debug\System.Data.SQLite.dll
+C:\Users\kesha\Desktop\_atlsdk1\_atlsdk\BatteryAnalyzerTask\bin\Debug\AnalyzerTask.pdb
+C:\Users\kesha\Desktop\_atlsdk1\_atlsdk\BatteryAnalyzerTask\bin\Debug\Common.pdb
+C:\Users\kesha\Desktop\_atlsdk1\_atlsdk\BatteryAnalyzerTask\bin\Debug\Config.pdb
+C:\Users\kesha\Desktop\_atlsdk1\_atlsdk\BatteryAnalyzerTask\bin\Debug\System.Data.SQLite.xml
+C:\Users\kesha\Desktop\_atlsdk1\_atlsdk\BatteryAnalyzerTask\obj\Debug\BatteryAnalyzerTask.csprojAssemblyReference.cache
+C:\Users\kesha\Desktop\_atlsdk1\_atlsdk\BatteryAnalyzerTask\obj\Debug\BatteryAnalyzerTask.csproj.CoreCompileInputs.cache
+C:\Users\kesha\Desktop\_atlsdk1\_atlsdk\BatteryAnalyzerTask\obj\Debug\BatteryAnalyzerTask.csproj.CopyComplete
+C:\Users\kesha\Desktop\_atlsdk1\_atlsdk\BatteryAnalyzerTask\obj\Debug\BatteryAnalyzerTask.dll
+C:\Users\kesha\Desktop\_atlsdk1\_atlsdk\BatteryAnalyzerTask\obj\Debug\BatteryAnalyzerTask.pdb
