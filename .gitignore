@@ -131,3 +131,6 @@ dmypy.json
 # big files
 *.csv000
 *.csv001
+
+/data/raw
+/data/temp
