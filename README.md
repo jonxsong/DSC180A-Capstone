@@ -8,6 +8,8 @@ Files to be saved during the running of /run.py will be located in /data/out.
 Create a classification model to predict a user’s persona based on their device’s specifications,
 average CPU utilization, and core temperature.
 
+### Link to download the datasets:
+https://drive.google.com/drive/folders/1nNpwhzrbKUJd0ZwbCYLGQH49CKkKLTQ4?usp=sharing
 
 ### Responsibilities:
 
