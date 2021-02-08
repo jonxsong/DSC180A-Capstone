@@ -129,8 +129,8 @@ dmypy.json
 .pyre/
 
 # big files
-*.csv000
-*.csv001
+# *.csv000
+# *.csv001
 
 /data/raw
 /data/temp
