@@ -6,3 +6,6 @@ os
 json
 sys
 jupyter notebook
+sklearn
+functools
+seaborn

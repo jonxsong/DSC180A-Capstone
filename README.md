@@ -1,13 +1,13 @@
-# DSC180A-Capstone
+# DSC180AB-Capstone
 
-Please refer over to notebooks/FINAL_NOTEBOOK.ipynb for the Final Report + Code submission.
+Relevant methods used for data exploration can be found in /src/data_exploration.py.
+Main script to be ran can be found in /run.py, all that is required to do is to run the file!
+Files to be saved during the running of /run.py will be located in /data/out.
 
-The FINAL_NOTEBOOK.pdf in the root directory should contain all necessary explorations of data along with the report as well.
+### Project Proposal:
+Create a classification model to predict a user’s persona based on their device’s specifications,
+average CPU utilization, and core temperature.
 
-For graphs produced from running our main script, run.py, please refer over to "../data/out"
-
-To access our work with the Analyzer Task Library (ATL) and our data collected into
-the Input Libraries (IL), please refer over to "../ATL-and-IL.zip"
 
 ### Responsibilities:
 
@@ -24,3 +24,10 @@ Jon:
     - repository structuring
     - notebook outlining
     - script writing
+
+Vince:
+    - data modeling
+    - Report + targets
+    - data cleaning
+    - data explorations
+    - classifications
