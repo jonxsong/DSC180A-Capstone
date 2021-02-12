@@ -93,7 +93,7 @@ class data_exploration():
         optimized_df[converted_obj.columns] = converted_obj
         return optimized_df
 
-    def get_cpu_statistics(df, column, value):
+    def get_stats(df, column, value):
         """
         Description: returns the dataframe when the column 'name' is that specified
         Parameters: df -> DataFrame
@@ -111,6 +111,9 @@ class data_exploration():
 
     def get_cpu_guid(series, list):
         """
+        Description: returns a dataframe of only matching GUIDs
+        Parameters: series -> SeriesObject, list -> List
+        Returns: DataFrame
         """
         hwcpu_match = series.loc[series['guid'].isin(list)]
         hwcpu_match = hwcpu_match[['guid', 'load_ts', 'mean']]
@@ -120,6 +123,9 @@ class data_exploration():
 
     def get_temp_guid(series, list):
         """
+        Description: returns a dataframe of only matching GUIDs
+        Parameters: series -> SeriesObject, list -> List
+        Returns: DataFrame        
         """
         hwtemp_match = series.loc[series['guid'].isin(list)]
         hwtemp_match = hwtemp_match[['guid', 'load_ts', 'mean']]

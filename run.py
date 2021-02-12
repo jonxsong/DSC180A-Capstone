@@ -30,6 +30,12 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
 from sklearn.linear_model import SGDClassifier
 
+# my edit
+from sklearn.svm import LinearSVC
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
+from sklearn.datasets import make_classification
+
 sys.path.insert(0, 'src')
 from src.data_exploration import *
 
@@ -45,14 +51,10 @@ def main(targets):
     optimized_df = data_exploration.optimize_dataframe(cpu_df)
 
     # grab the specific column "HW::CORE:C0:PERCENT" as a feature
-    cpu = data_exploration.get_cpu_statistics(optimized_df,
-                                             "name",
-                                             "HW::CORE:C0:PERCENT:")
+    cpu = data_exploration.get_stats(optimized_df, "name", "HW::CORE:C0:PERCENT:")
 
     # grab the specific column "HW::CORE:TEMPERATURE:CENTIGRADE" as a feature
-    temp = data_exploration.get_cpu_statistics(optimized_df,
-                                              "name",
-                                              "HW::CORE:TEMPERATURE:CENTIGRADE:")
+    temp = data_exploration.get_stats(optimized_df, "name", "HW::CORE:TEMPERATURE:CENTIGRADE:")
 
     # grab the GUIDs from each dataset and put them into lists
     sys_guid = data_exploration.get_guid(sys_df, 'guid')
