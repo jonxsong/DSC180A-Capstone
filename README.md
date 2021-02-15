@@ -14,13 +14,12 @@ https://drive.google.com/drive/folders/1nNpwhzrbKUJd0ZwbCYLGQH49CKkKLTQ4?usp=sha
 The datasets we are using are too large for github. We will be attending office hours sometime week 6 (Feb 8 - 12) to figure out a solution.
 The datasets should be stored in /data/raw/.
 ### Visual Presentation Checkpoint
-
-### Responsibilities:
 The dsc180_home.html is the website in which we will present and deploy our predictive model.
 flask_homepage.py contains the API to deploy our model.
 model.pkl inside the src file contains our model.
 We will need to connect the files so that our page prints the outputs of our prediction.
 
+### Responsibilities:
 Keshan:
     - data preparation
     - tabled data
@@ -41,3 +40,4 @@ Vince:
     - data cleaning
     - data explorations
     - classifications
+    - Visualization Checkpoint
