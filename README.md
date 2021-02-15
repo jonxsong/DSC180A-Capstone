@@ -40,4 +40,4 @@ Vince:
     - data cleaning
     - data explorations
     - classifications
-    - Visualization Checkpoint
+    - Visual Presentation Checkpoint
