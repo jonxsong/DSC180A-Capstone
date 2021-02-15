@@ -1,0 +1,20 @@
+<html>
+    <body bgcolor=#d4a3ae>
+
+        <center>
+
+        <h1> Predicting a user’s persona based on their average CPU utilization and core temperature </h1><br>
+
+        <form method="POST", action="{{url_for('home')}}">
+           <b> os :  <input type="text", name='a', placeholder="i.e. Windows 10"> <br><br>
+             cpu family :  <input type="text", name='b', placeholder="i.e. Core i3"> <br><br>
+            cpu vendor :  <input type="text", name='c', placeholder="i.e. cpuvendor_Intel"> <br><br>
+            graphics card class : <input type="text", name='d', placeholder="i.e. SuitedForGames"> <br><br><br></b>
+            <input type="submit" , value='predict!' >
+        </form>
+
+
+    </center>
+
+    </body>
+</html>

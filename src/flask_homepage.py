@@ -3,7 +3,7 @@ Jon Zhang, Keshan Chen, Vince Wong
 flask_homepage.py
 """
 import pandas as pd
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 import pickle
 from sklearn.model_selection import train_test_split
 from sklearn.neural_network import MLPClassifier
