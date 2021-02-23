@@ -132,3 +132,4 @@ dmypy.json
 # *.csv000
 # *.csv001
 
+data/raw/hw_metric_histo.csv000
