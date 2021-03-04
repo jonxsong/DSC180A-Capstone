@@ -133,3 +133,6 @@ dmypy.json
 # *.csv001
 
 data/raw/hw_metric_histo.csv000
+data/raw/frgnd_backgrnd_apps.csv000
+data/raw/system_sysinfo_unique_normalized.csv000
+data/raw/ucsd_apps_execlass.csv000

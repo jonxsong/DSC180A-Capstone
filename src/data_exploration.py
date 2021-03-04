@@ -45,7 +45,7 @@ class data_exploration():
                                            'name','instance','nrs', 'mean',
                                            'histogram_min', 'histogram_max','metric_max_val'],
                                   nrows=1000000,
-                                  sep='\t')
+                                  sep='\t', error_bad_lines = False)
 
     def parse_sys_data(fname):
         """
@@ -59,7 +59,18 @@ class data_exploration():
                                            'graphicsmanuf', 'gfxcard', 'graphicscardclass',
                                            'processornumber', 'cpuvendor', 'cpu_family',
                                            'discretegraphics', 'vpro_enabled','persona'],
-                                  sep=chr(1))
+                                  sep=chr(1), error_bad_lines = False)
+
+    def parse_app_data(fname1, fname2):
+        """
+        Description: reads a csv file and converts into dataframe
+        Parameters: fname -> .csv
+        Returns: DataFrame
+        """
+        apps = pd.read_csv(fname1, error_bad_lines=False, sep=chr(1))
+        app_class = pd.read_csv(fname2, error_bad_lines=False, sep=chr(35))
+        combined = apps.join(app_class, lsuffix='frgnd_proc_name', rsuffix='exe_name', how='left')
+        return combined
 
     def optimize_dataframe(df):
         """
@@ -125,7 +136,7 @@ class data_exploration():
         """
         Description: returns a dataframe of only matching GUIDs
         Parameters: series -> SeriesObject, list -> List
-        Returns: DataFrame        
+        Returns: DataFrame
         """
         hwtemp_match = series.loc[series['guid'].isin(list)]
         hwtemp_match = hwtemp_match[['guid', 'load_ts', 'mean']]
@@ -133,23 +144,21 @@ class data_exploration():
         hwtemp_match = hwtemp_match.drop(columns='mean')
         return hwtemp_match
 
-    def get_model_scores(column1, column2):
+    def get_table(df, df2, df3):
         """
-        Description: returns a dataframe consisting of the accuracy scores of each model
-        Parameters: column1 -> Series Object, column2 -> Series Object
-        Returns: DataFrame
         """
-        df = pd.DataFrame()
-        df['name'] = column1
-        df['score'] = column2
-        return df
+        combined = df.join(df2, on=['guid'], how='left')
+        combined = combined.join(df3, on=['guid'], how='left')
+        combined = combined.drop(columns=['guid', 'model_normalized', "processornumber"])
+        return combined
 
-    def plot_graphical_model_scores(df):
+    def get_mean_durations(df, df2):
         """
-        Description: returns a saved image of a barplot conveying our accuracy scores
-        Parameters: df -> DataFrame
-        Returns: Model_scores.png -> file saved in /data/out/
         """
-        sns.set(style="whitegrid")
-        ax = sns.barplot(y="name", x="score", data=df)
-        return plt.savefig("data/out/Model_scores.png")
+        mean_dur = df.pivot_table('event_duration_ms',
+                                 ['guid', 'app_type'], aggfunc=np.mean).reset_index()
+        combined_guid = list(df2['guid'].value_counts().index)
+        dur_guid = list(mean_dur['guid'].value_counts().index)
+        app_overlap = [x for x in combined_guid if x in dur_guid]
+        mean_dur = mean_dur.loc[mean_dur['guid'].isin(app_overlap)]
+        return mean_dur
