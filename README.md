@@ -1,4 +1,7 @@
-# DSC180AB-Capstone
+# Prediction Task: Utilizing CPU Statistics and Application Usage to Predict a User’s Persona
+
+### Homepage
+https://predicting-persona-b09group04.medium.com/
 
 Relevant methods used for data exploration can be found in /src/data_exploration.py.
 Main script to be ran can be found in /run.py, all that is required to do is to run the file!
@@ -12,8 +15,6 @@ average CPU utilization, and core temperature.
 https://drive.google.com/drive/folders/1nNpwhzrbKUJd0ZwbCYLGQH49CKkKLTQ4?usp=sharing
 
 The datasets we are using are too large for github. The datasets should be stored in /data/raw/.
-### Visual Presentation
-https://predicting-persona-b09group04.medium.com/
 
 ### Responsibilities:
 Keshan:
