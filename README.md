@@ -1,8 +1,10 @@
 # Prediction Task: Utilizing CPU Statistics and Application Usage to Predict a User’s Persona
 
 
+
 ### Homepage
 https://predicting-persona-b09group04.medium.com/
+
 
 
 ### Usage
@@ -12,6 +14,7 @@ git clone https://github.com/jonxsong/DSC180AB-Capstone.git
 cd DSC180AB-Capstone
 python run.py test
 ```
+
 
 
 ### Files
@@ -38,10 +41,13 @@ python run.py test
 **./run.py** - call run.py to run data analysis
 
 
+
 ### Data/Output Files
 
 **./data/out/...** - this location should hold all the outputted pictures generated from methods
+
 **./data/raw/...** - this location should hold all the datasets downloaded below
+
 
 
 ### Link to download the datasets:
@@ -50,8 +56,10 @@ https://drive.google.com/drive/folders/1nNpwhzrbKUJd0ZwbCYLGQH49CKkKLTQ4?usp=sha
 The datasets we are using are too large for github. The datasets should be stored in /data/raw/.
 
 
+
 ### Sources
 Link to Project Report: https://docs.google.com/document/d/1IpWfuG2IxurT5LOMyudWpn3UOLsKYKdjbbwqNhPGlYk/edit?usp=sharing
+
 
 
 ### Responsibilities:
