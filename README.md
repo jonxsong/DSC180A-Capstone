@@ -4,18 +4,24 @@
 https://predicting-persona-b09group04.medium.com/
 
 ### Files
-**./config/data-params.json**
-**./config/**
-**./config/**
-**./config/**
+**./config/data-params.json** -
+
+**./config/** -
+
+**./config/** -
+
+**./config/** -
 
 **./notebooks/eda.ipynb** -
-**./notebooks/**
+
+**./notebooks/** -
 
 **./src/data_exploration.py** -
+
 **./src/model.py** -
 
 **./requirements.txt** - required packages
+
 **./run.py** - call run.py to run data analysis
 
 ### Link to download the datasets:
