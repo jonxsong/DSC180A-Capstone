@@ -12,11 +12,8 @@ average CPU utilization, and core temperature.
 https://drive.google.com/drive/folders/1nNpwhzrbKUJd0ZwbCYLGQH49CKkKLTQ4?usp=sharing
 
 The datasets we are using are too large for github. The datasets should be stored in /data/raw/.
-### Visual Presentation Checkpoint
-The dsc180_home.html is the website in which we will present and deploy our predictive model.
-flask_homepage.py contains the API to deploy our model.
-model.pkl inside the src file contains our model.
-We will need to connect the files so that our page prints the outputs of our prediction.
+### Visual Presentation
+insert link here
 
 ### Responsibilities:
 Keshan:
