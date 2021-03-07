@@ -16,6 +16,9 @@ https://drive.google.com/drive/folders/1nNpwhzrbKUJd0ZwbCYLGQH49CKkKLTQ4?usp=sha
 
 The datasets we are using are too large for github. The datasets should be stored in /data/raw/.
 
+### Sources
+Link to Project Report: https://docs.google.com/document/d/1IpWfuG2IxurT5LOMyudWpn3UOLsKYKdjbbwqNhPGlYk/edit?usp=sharing
+
 ### Responsibilities:
 Keshan:
     - data preparation
