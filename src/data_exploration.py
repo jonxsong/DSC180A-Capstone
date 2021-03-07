@@ -70,6 +70,7 @@ class data_exploration():
         apps = pd.read_csv(fname1, error_bad_lines=False, sep=chr(1))
         app_class = pd.read_csv(fname2, error_bad_lines=False, sep=chr(35))
         combined = apps.join(app_class, lsuffix='frgnd_proc_name', rsuffix='exe_name', how='left')
+        #print(combined)
         return combined
 
     def optimize_dataframe(df):
@@ -149,16 +150,17 @@ class data_exploration():
         """
         combined = df.join(df2, on=['guid'], how='left')
         combined = combined.join(df3, on=['guid'], how='left')
-        combined = combined.drop(columns=['guid', 'model_normalized', "processornumber"])
+        #combined = combined.drop(columns=['model_normalized', "processornumber"])
+        #print(combined.columns)
         return combined
 
     def get_mean_durations(df, df2):
         """
         """
-        mean_dur = df.pivot_table('event_duration_ms',
-                                 ['guid', 'app_type'], aggfunc=np.mean).reset_index()
+        mean_dur = df.pivot_table('event_duration_ms', ['guid', 'app_type'], aggfunc=np.mean).reset_index()
         combined_guid = list(df2['guid'].value_counts().index)
         dur_guid = list(mean_dur['guid'].value_counts().index)
         app_overlap = [x for x in combined_guid if x in dur_guid]
         mean_dur = mean_dur.loc[mean_dur['guid'].isin(app_overlap)]
+        #print(mean_dur)
         return mean_dur

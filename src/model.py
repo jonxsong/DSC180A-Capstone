@@ -38,7 +38,7 @@ class model():
     """
     class model contains all methods pertaining to data modelling
     """
-    def get_combined_table(df, column):
+    def get_combined_table(df, df2, column):
         """
         """
         itdur = df.loc[df[column]=='IT']
@@ -57,28 +57,31 @@ class model():
         edudur = df.loc[df[column]=='Education']
         appdur = df.loc[df[column]=='Metro/Universal Apps']
         oobedur = df.loc[df[column]=='OOBE']
-        gldur = df.loc[df[column]]=='Game Launcher']
+        gldur = df.loc[df[column]=='Game Launcher']
 
         types = [itdur, avdur, commdur, gamedur, iudur, intdur, meddur, netdur,
-               offdur, sysdur, utdur, meditdur, udur, edudur, appdur, oobedur, gldur]
+                 offdur, sysdur, utdur, meditdur, udur, edudur, appdur, oobedur, gldur]
 
+        #print(itdur)
         for x in types:
             string = x[column].iloc[0]
-            x = x.drop(columns = [column])
+            x = x.drop(columns=[column])
             new_col = string + '_dur_ms'
             x[new_col] = x['event_duration_ms']
-            x = x.drop(columns = ['event_duration_ms'])
-            combined = combined.merge(x, on=['guid'], how='left')
+            x = x.drop(columns=['event_duration_ms'])
+            combined = df2.merge(x, on=['guid'], how='left')
 
         lst = ['IT_dur_ms', 'Anti-Virus_dur_ms', 'Communication_dur_ms',
                'Game_dur_ms', 'Installer/Updater_dur_ms', 'Internet_dur_ms',
-              'Media/Consumption_dur_ms', 'Network Apps_dur_ms', 'Office_dur_ms',
-              'System/Other_dur_ms', 'Utility_dur_ms', 'Media/Edit_dur_ms',  '*_dur_ms',
-              'Education_dur_ms','Metro/Universal Apps_dur_ms', 'OOBE_dur_ms']
+               'Media/Consumption_dur_ms', 'Network Apps_dur_ms', 'Office_dur_ms',
+               'System/Other_dur_ms', 'Utility_dur_ms', 'Media/Edit_dur_ms',  '*_dur_ms',
+               'Education_dur_ms','Metro/Universal Apps_dur_ms', 'OOBE_dur_ms']
 
         for i in lst:
             combined=combined.fillna({i:0})
 
+        #print(combined)
+        #print(combined.columns)
         combined = combined[['chassistype', 'modelvendor_normalized', 'ram',
                              'os','#ofcores', 'age_category',
                              'graphicsmanuf', 'gfxcard', 'graphicscardclass',
@@ -96,8 +99,7 @@ class model():
     def macro_cats(x):
         """
         """
-        if x=='Web User' or x=='Casual User' or x=='Communication' or x=='Win Store App User'
-                         or x=='Entertainment' or x=='File & Network Sharer':
+        if x=='Web User' or x=='Casual User' or x=='Communication' or x=='Win Store App User' or x=='Entertainment' or x=='File & Network Sharer':
             return 0
         elif x=='Gamer' or x=='Casual Gamer':
             return 1

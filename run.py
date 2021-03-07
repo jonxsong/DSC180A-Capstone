@@ -36,6 +36,7 @@ from sklearn.datasets import make_classification
 
 sys.path.insert(0, 'src')
 from src.data_exploration import *
+from src.model import *
 
 def main(targets):
     """
@@ -46,7 +47,8 @@ def main(targets):
     sys_df = data_exploration.parse_sys_data("data/raw/system_sysinfo_unique_normalized.csv000")
     apps_df = data_exploration.parse_app_data('data/raw/frgnd_backgrnd_apps.csv000',
                                               'data/raw/ucsd_apps_execlass.csv000')
-
+    print(sys_df)
+    print(apps_df)
     # Create a new reference to the optimized DataFrame
     optimized_df = data_exploration.optimize_dataframe(cpu_df)
 
@@ -65,18 +67,20 @@ def main(targets):
 
     # objective is to create a dataframe of only matching GUIDs
     hwcpu_match = data_exploration.get_cpu_guid(cpu, syshw_overlap)
-
+    print (hwcpu_match)
     # only grabbing the relevant columns to be matched on
     hwtemp_match = data_exploration.get_temp_guid(temp, syshw_overlap)
-
+    print(hwtemp_match)
     # instantiating our dataframes to be joined
     hwtemp = pd.DataFrame(hwtemp_match.groupby('guid')['temp_mean'].mean())
+    #print(hwtemp)
     hwcpu = pd.DataFrame(hwcpu_match.groupby('guid')['utilization_mean'].mean())
-
+    #print(hwcpu)
     # joining our matched dataframes together, only using relevant columns
     table = data_exploration.get_table(sys_df, hwcpu, hwtemp)
+    print(table)
     mean_dur = data_exploration.get_mean_durations(apps_df, table)
-    combined = model.get_combined_table(mean_dur, "app_type")
+    combined = model.get_combined_table(mean_dur, table, "app_type")
 
     Y = model.targets(combined)
     X = model.features_df(combined)
