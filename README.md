@@ -3,9 +3,10 @@
 
 
 ## Homepage
+https://vlw003.github.io
+
+## Medium Blog
 https://predicting-persona-b09group04.medium.com/
-
-
 
 ## Usage
 ```
