@@ -20,13 +20,13 @@ python run.py test
 ### Files
 **./config/data-params.json** - directory where data should be output to
 
-**./config/hw-metric-histo-data-params** - description of the dataset and features we utilize
+**./config/hw-metric-histo-data-params.json** - description of the dataset and features we utilize
 
-**./config/systems-sysinfo-unique-normalized-data-params** - description of the dataset and features we utilize
+**./config/systems-sysinfo-unique-normalized-data-params.json** - description of the dataset and features we utilize
 
-**./config/ucsd-apps-execlass-data-params** - description of the dataset and features we utilize
+**./config/ucsd-apps-execlass-data-params.json** - description of the dataset and features we utilize
 
-**./config/frgnd_backgrnd_apps-data-params** - description of the dataset and features we utilize
+**./config/frgnd_backgrnd_apps-data-params.json** - description of the dataset and features we utilize
 
 **./notebooks/eda.ipynb** - notebook containing data explorations from DSC180B
 
