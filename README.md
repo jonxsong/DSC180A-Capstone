@@ -2,12 +2,12 @@
 
 
 
-### Homepage
+## Homepage
 https://predicting-persona-b09group04.medium.com/
 
 
 
-### Usage
+## Usage
 ```
 launch-scipy-ml.sh
 git clone https://github.com/jonxsong/DSC180AB-Capstone.git
@@ -17,7 +17,8 @@ python run.py test
 
 
 
-### Files
+## Files
+
 **./config/data-params.json** - directory where data should be output to
 
 **./config/hw-metric-histo-data-params.json** - description of the dataset and features we utilize
@@ -42,7 +43,7 @@ python run.py test
 
 
 
-### Data/Output Files
+## Data/Output Files
 
 **./data/out/...** - this location should hold all the outputted pictures generated from methods
 
@@ -50,19 +51,19 @@ python run.py test
 
 
 
-### Link to download the datasets:
+## Link to download the datasets:
 https://drive.google.com/drive/folders/1nNpwhzrbKUJd0ZwbCYLGQH49CKkKLTQ4?usp=sharing
 
 The datasets we are using are too large for github. The datasets should be stored in /data/raw/.
 
 
 
-### Sources
+## Sources
 Link to Project Report: https://docs.google.com/document/d/1IpWfuG2IxurT5LOMyudWpn3UOLsKYKdjbbwqNhPGlYk/edit?usp=sharing
 
 
 
-### Responsibilities:
+## Responsibilities:
 Keshan:
     - data preparation
     - tabled data
