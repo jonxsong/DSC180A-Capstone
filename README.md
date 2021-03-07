@@ -3,13 +3,20 @@
 ### Homepage
 https://predicting-persona-b09group04.medium.com/
 
-Relevant methods used for data exploration can be found in /src/data_exploration.py.
-Main script to be ran can be found in /run.py, all that is required to do is to run the file!
-Files to be saved during the running of /run.py will be located in /data/out.
+### Files
+**./config/data-params.json**
+**./config/**
+**./config/**
+**./config/**
 
-### Project Proposal:
-Create a classification model to predict a user’s persona based on their device’s specifications,
-average CPU utilization, and core temperature.
+**./notebooks/eda.ipynb** -
+**./notebooks/**
+
+**./src/data_exploration.py** -
+**./src/model.py** -
+
+**./requirements.txt** - required packages
+**./run.py** - call run.py to run data analysis
 
 ### Link to download the datasets:
 https://drive.google.com/drive/folders/1nNpwhzrbKUJd0ZwbCYLGQH49CKkKLTQ4?usp=sharing
