@@ -1,7 +1,9 @@
 # Prediction Task: Utilizing CPU Statistics and Application Usage to Predict a User’s Persona
 
+
 ### Homepage
 https://predicting-persona-b09group04.medium.com/
+
 
 ### Usage
 ```
@@ -11,34 +13,46 @@ cd DSC180AB-Capstone
 python run.py test
 ```
 
+
 ### Files
-**./config/data-params.json** -
+**./config/data-params.json** - directory where data should be output to
 
-**./config/** -
+**./config/hw-metric-histo-data-params** - description of the dataset and features we utilize
 
-**./config/** -
+**./config/systems-sysinfo-unique-normalized-data-params** - description of the dataset and features we utilize
 
-**./config/** -
+**./config/ucsd-apps-execlass-data-params** - description of the dataset and features we utilize
 
-**./notebooks/eda.ipynb** -
+**./config/frgnd_backgrnd_apps-data-params** - description of the dataset and features we utilize
 
-**./notebooks/** -
+**./notebooks/eda.ipynb** - notebook containing data explorations from DSC180B
 
-**./src/data_exploration.py** -
+**./notebooks/dsc180a-notebook.ipynb** - notebook containing data explorations from DSC180A
 
-**./src/model.py** -
+**./src/data_exploration.py** - file containing relevant methods for data exploration
+
+**./src/model.py** - file containing relevant methods for data modelling
 
 **./requirements.txt** - required packages
 
 **./run.py** - call run.py to run data analysis
+
+
+### Data/Output Files
+
+**./data/out/...** - this location should hold all the outputted pictures generated from methods
+**./data/raw/...** - this location should hold all the datasets downloaded below
+
 
 ### Link to download the datasets:
 https://drive.google.com/drive/folders/1nNpwhzrbKUJd0ZwbCYLGQH49CKkKLTQ4?usp=sharing
 
 The datasets we are using are too large for github. The datasets should be stored in /data/raw/.
 
+
 ### Sources
 Link to Project Report: https://docs.google.com/document/d/1IpWfuG2IxurT5LOMyudWpn3UOLsKYKdjbbwqNhPGlYk/edit?usp=sharing
+
 
 ### Responsibilities:
 Keshan:
