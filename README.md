@@ -3,9 +3,10 @@
 
 
 ## Homepage
+https://vlw003.github.io
+
+## Medium Blog
 https://predicting-persona-b09group04.medium.com/
-
-
 
 ## Usage
 ```
@@ -85,3 +86,6 @@ Vince:
     - data explorations
     - classifications
     - Visual Presentation Checkpoint
+    - Website
+    - Final Report
+    - Slides
