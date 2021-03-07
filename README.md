@@ -13,7 +13,7 @@ https://drive.google.com/drive/folders/1nNpwhzrbKUJd0ZwbCYLGQH49CKkKLTQ4?usp=sha
 
 The datasets we are using are too large for github. The datasets should be stored in /data/raw/.
 ### Visual Presentation
-insert link here
+https://predicting-persona-b09group04.medium.com/
 
 ### Responsibilities:
 Keshan:
