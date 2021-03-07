@@ -86,3 +86,6 @@ Vince:
     - data explorations
     - classifications
     - Visual Presentation Checkpoint
+    - Website
+    - Final Report
+    - Slides
