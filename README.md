@@ -10,7 +10,6 @@ https://predicting-persona-b09group04.medium.com/
 
 ## Usage
 ```
-launch-scipy-ml.sh
 git clone https://github.com/jonxsong/DSC180AB-Capstone.git
 cd DSC180AB-Capstone
 python run.py test
