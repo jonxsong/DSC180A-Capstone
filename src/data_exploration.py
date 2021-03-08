@@ -64,7 +64,6 @@ class data_exploration():
         apps = pd.read_csv(fname1, error_bad_lines=False, sep=chr(1))
         app_class = pd.read_csv(fname2, error_bad_lines=False, sep=chr(35))
         combined = apps.join(app_class, lsuffix='frgnd_proc_name', rsuffix='exe_name', how='left')
-        #print(combined)
         return combined
 
     def optimize_dataframe(data):
