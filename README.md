@@ -10,7 +10,6 @@ https://predicting-persona-b09group04.medium.com/
 
 ## Usage
 ```
-launch-scipy-ml.sh
 git clone https://github.com/jonxsong/DSC180AB-Capstone.git
 cd DSC180AB-Capstone
 python run.py test
@@ -65,12 +64,6 @@ Link to Project Report: https://docs.google.com/document/d/1IpWfuG2IxurT5LOMyudW
 
 
 ## Responsibilities:
-Keshan:
-    - data preparation
-    - tabled data
-    - key notes all throughout notebook
-    - graphs + graph analysis
-    - ATL work
 
 Jon:
     - Report + main ideas
@@ -89,3 +82,10 @@ Vince:
     - Website
     - Final Report
     - Slides
+
+Keshan:
+    - data preparation
+    - tabled data
+    - key notes all throughout notebook
+    - graphs + graph analysis
+    - ATL work
