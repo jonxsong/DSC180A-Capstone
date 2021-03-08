@@ -40,6 +40,9 @@ class model():
     """
     def get_combined_table(df, df2, column):
         """
+        Description: Merge combined DataFrame with every relevant feature column
+        Parameters: df -> DataFrame, df2 -> DataFrame, column -> String
+        Returns: DataFrame
         """
         itdur = df.loc[df[column]=='IT']
         avdur  = df.loc[df[column]=='Anti-Virus']
@@ -62,14 +65,15 @@ class model():
         types = [itdur, avdur, commdur, gamedur, iudur, intdur, meddur, netdur,
                  offdur, sysdur, utdur, meditdur, udur, edudur, appdur, oobedur, gldur]
 
-        #print(itdur)
+        combined = df2
         for x in types:
+
             string = x[column].iloc[0]
             x = x.drop(columns=[column])
             new_col = string + '_dur_ms'
             x[new_col] = x['event_duration_ms']
             x = x.drop(columns=['event_duration_ms'])
-            combined = df2.merge(x, on=['guid'], how='left')
+            combined = combined.merge(x, on=['guid'], how='left')
 
         lst = ['IT_dur_ms', 'Anti-Virus_dur_ms', 'Communication_dur_ms',
                'Game_dur_ms', 'Installer/Updater_dur_ms', 'Internet_dur_ms',
@@ -78,10 +82,8 @@ class model():
                'Education_dur_ms','Metro/Universal Apps_dur_ms', 'OOBE_dur_ms']
 
         for i in lst:
-            combined=combined.fillna({i:0})
+            combined[i] = combined[i].fillna(0)
 
-        #print(combined)
-        #print(combined.columns)
         combined = combined[['chassistype', 'modelvendor_normalized', 'ram',
                              'os','#ofcores', 'age_category',
                              'graphicsmanuf', 'gfxcard', 'graphicscardclass',
@@ -96,36 +98,50 @@ class model():
 
         return combined
 
-    def macro_cats(x):
-        """
-        """
-        if x=='Web User' or x=='Casual User' or x=='Communication' or x=='Win Store App User' or x=='Entertainment' or x=='File & Network Sharer':
-            return 0
-        elif x=='Gamer' or x=='Casual Gamer':
-            return 1
-        elif x=='Office/Productivity' or x=='Content Creator/IT':
-            return 2
-        elif x == 'Unknown':
-            return 3
-        else:
-            return 4
 
     def features_df(df):
         """
+        Description: Method to separate all the features into a DataFrame
+        Parameters: df -> DataFrame
+        Returns: DataFrame
         """
-        morecats = df.dropna()
+        def macro_cats(x):
+            """
+            Description: Encodes strings to numerical values
+            Parameters: x -> String
+            Returns: String
+            """
+            if x=='Web User' or x=='Casual User' or x=='Communication' or x=='Win Store App User' or x=='Entertainment' or x=='File & Network Sharer':
+                return 0
+            elif x=='Gamer' or x=='Casual Gamer':
+                return 1
+            elif x=='Office/Productivity' or x=='Content Creator/IT':
+                return 2
+            elif x == 'Unknown':
+                return 3
+            else:
+                return 4
+
+        morecats = df.dropna(axis=1)
         morecats['persona'] = morecats['persona'].apply(macro_cats)
         morecats = morecats.drop(columns=['persona'])
+        morecats = pd.get_dummies(morecats)
         return morecats
 
     def targets(df):
         """
+        Description: Method just returns the persona column
+        Parameters: df -> DataFrame
+        Returns: DataFrame Column Object
         """
         Y = df['persona']
         return Y
 
     def train_model(_X_, _Y_):
         """
+        Description: train_model essentially runs our classifiers and outputs accuracy scores
+        Parameters: _X_ -> feature vectors, _Y_ -> predictor variable
+        Returns: DataFrame
         """
         X_train, X_test, Y_train, Y_test = train_test_split(_X_, _Y_, test_size=0.2)
         names = ["Extra_Trees", "AdaBoost", "Gradient_Boosting"]
@@ -153,4 +169,5 @@ class model():
         Returns: Model_scores.png -> file saved in /data/out/
         """
         sns.set(style="whitegrid")
-        ax = sns.barplot(y="name", x="score", data=show)
+        ax = sns.barplot(y="name", x="score", data=df)
+        return plt.savefig("data/out/Accuracy_Score.png")

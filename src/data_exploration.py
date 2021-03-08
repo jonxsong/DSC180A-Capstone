@@ -45,7 +45,7 @@ class data_exploration():
                                            'name','instance','nrs', 'mean',
                                            'histogram_min', 'histogram_max','metric_max_val'],
                                   nrows=1000000,
-                                  sep='\t', error_bad_lines = False)
+                                  sep='\t')
 
     def parse_sys_data(fname):
         """
@@ -53,13 +53,7 @@ class data_exploration():
         Parameters: fname -> .csv
         Returns: DataFrame
         """
-        return pd.read_csv(fname, usecols=['guid','chassistype', 'modelvendor_normalized',
-                                           'model_normalized', 'ram',
-                                           'os','#ofcores', 'age_category',
-                                           'graphicsmanuf', 'gfxcard', 'graphicscardclass',
-                                           'processornumber', 'cpuvendor', 'cpu_family',
-                                           'discretegraphics', 'vpro_enabled','persona'],
-                                  sep=chr(1), error_bad_lines = False)
+        return pd.read_csv(fname, sep=chr(1))
 
     def parse_app_data(fname1, fname2):
         """
@@ -73,7 +67,7 @@ class data_exploration():
         #print(combined)
         return combined
 
-    def optimize_dataframe(df):
+    def optimize_dataframe(data):
         """
         Description: takes in the cpu dataframe and optimizes it through converting columns
         Parameters: df -> DataFrame
@@ -147,20 +141,24 @@ class data_exploration():
 
     def get_table(df, df2, df3):
         """
+        Description: returns a dataframe consisting of left-joined dataframes matching on GUID
+        Parameters: df -> DataFrame, df2 -> DataFrame, df3 -> DataFrame
+        Returns: DataFrame
         """
         combined = df.join(df2, on=['guid'], how='left')
         combined = combined.join(df3, on=['guid'], how='left')
         #combined = combined.drop(columns=['model_normalized', "processornumber"])
-        #print(combined.columns)
         return combined
 
     def get_mean_durations(df, df2):
         """
+        Description: returns a dataframe consisting of 3 columns matched on guid and mean durations
+        Parameters: df -> DataFrame, df2 -> DataFrame
+        Returns: DataFrame
         """
         mean_dur = df.pivot_table('event_duration_ms', ['guid', 'app_type'], aggfunc=np.mean).reset_index()
         combined_guid = list(df2['guid'].value_counts().index)
         dur_guid = list(mean_dur['guid'].value_counts().index)
         app_overlap = [x for x in combined_guid if x in dur_guid]
         mean_dur = mean_dur.loc[mean_dur['guid'].isin(app_overlap)]
-        #print(mean_dur)
         return mean_dur
